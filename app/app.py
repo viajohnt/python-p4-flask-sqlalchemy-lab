@@ -22,7 +22,7 @@ def animal_by_id(id):
     response_body += f'<ul>ID: {animal.id}</ul>'
     response_body += f'<ul>Name: {animal.name}</ul>'
     response_body += f'<ul>Species: {animal.species}</ul>'
-    response_body += f'<ul>Zookeeper: {animal.zookeeper.name}/ul>'
+    response_body += f'<ul>Zookeeper: {animal.zookeeper.name}</ul>'
     response_body += f'<ul>Enclosure: {animal.enclosure.environment}</ul>'
 
     return make_response(response_body)
@@ -36,7 +36,7 @@ def zookeeper_by_id(id):
     response_body += f'<ul>Birthday: {zookeeper.birthday}</ul>'
 
     for animal in zookeeper.animals:
-        response_body += f'<ul>Animal: {animal.name}/ul>'
+        response_body += f'<ul>Animal: {animal.name}</ul>'
 
     return make_response(response_body)
 
@@ -49,10 +49,10 @@ def enclosure_by_id(id):
     response_body += f'<ul>Open to Visitors: {enclosure.open_to_visitors}</ul>'
 
     for animal in enclosure.animals:
-        response_body += f'<ul>Animal: {animal.name}/ul>'
+        response_body += f'<ul>Animal: {animal.name}</ul>'
 
     return make_response(response_body)
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=5555)

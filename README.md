@@ -12,7 +12,7 @@
 
 - **Web Framework**: software that is designed to support the development of
   web applications. Web frameworks provide built-in tools for generating web
-  servers, turning Python objects into HTML, and more.
+  servers, turning Python objects into gHTML, and more.
 - **Extension**: a package or module that adds functionality to a Flask
   application that it does not have by default.
 - **Request**: an attempt by one machine to contact another over the internet.

@@ -49,8 +49,11 @@ Instructions begin here:
   an `enclosure`.
 - The `Zookeeper` model should contain a `name`, a `birthday`, and a list of
   `animals` that they take care of.
-- The `Enclosure` model should contain an `environment` (grass, sand, or water),
-  an `open_to_visitors` boolean, and a list of `animals`.
+- The `Enclosure` model should contain an `environment` (`'grass'`, `'sand'`,
+  or `'water'`), an `open_to_visitors` boolean, and a list of `animals`.
+  > We will discuss _constraints_ later on in Phase 4. These allow you to make
+  > sure that input matches one of these elements, among many other things. For
+  > now, just trust that any input will follow these rules.
 - Your application should contain three views: `animal_by_id`,
   `zookeeper_by_id`, and `enclosure_by_id`. Their routes should be
   `animal/<int:id>`, `zookeeper/<int:id>`, and `enclosure/<int:id>`,

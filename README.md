@@ -45,15 +45,16 @@ Instructions begin here:
   `flask db upgrade`.
 - Your database should represent a zoo. There should be three tables: `animals`,
   `zookeepers`, and `enclosures`.
-- The `Animal` model should contain a `name`, a `species`, a `zookeeper`, and
-  an `enclosure`.
-- The `Zookeeper` model should contain a `name`, a `birthday`, and a list of
-  `animals` that they take care of.
-- The `Enclosure` model should contain an `environment` (`'grass'`, `'sand'`,
-  or `'water'`), an `open_to_visitors` boolean, and a list of `animals`.
-  > We will discuss _constraints_ later on in Phase 4. These allow you to make
-  > sure that input matches one of these elements, among many other things. For
-  > now, just trust that any input will follow these rules.
+- The `Animal` model should contain a String `name`, a String `species`, a
+  `zookeeper_id`, and an `enclosure_id`. It should be related to zookeepers and
+  enclosures using `db.relationship()`.
+  - _Reminder: You can test any model by itself with
+    `pytest testing/models/{modelname}_test.py`._
+- The `Zookeeper` model should contain a String `name`, a String `birthday`, and
+  a list of `animals` that they take care of using `db.relationship()`.
+- The `Enclosure` model should contain a String `environment` (grass, sand, or
+  water), a Boolean `open_to_visitors`, and a list of `animals` using
+  `db.relationship()`.
 - Your application should contain three views: `animal_by_id`,
   `zookeeper_by_id`, and `enclosure_by_id`. Their routes should be
   `animal/<int:id>`, `zookeeper/<int:id>`, and `enclosure/<int:id>`,

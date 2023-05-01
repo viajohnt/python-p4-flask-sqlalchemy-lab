@@ -1,10 +1,21 @@
 from os import environ
 import re
 
-from app import app
+from app import app, db
+from server.models import Animal, Enclosure, Zookeeper
 
 class TestApp:
     '''Flask application in app.py'''
+
+    with app.app_context():
+        a_1 = Animal()
+        a_2 = Animal()
+        e = Enclosure()
+        z = Zookeeper()
+        e.animals = [a_1, a_2]
+        z.animals = [a_1, a_2]
+        db.session.add_all([a_1, a_2, e, z])
+        db.session.commit()
 
     def test_animal_route(self):
         '''has a resource available at "/animal/<id>".'''
